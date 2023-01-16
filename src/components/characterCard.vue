@@ -9,7 +9,7 @@
           <img :src="data.images.icon" :alt="data.name">
         </figure>
         <h1>{{ data.name }}</h1>
-        <span>Rarity: {{ rarity(data).toString().split(',').join('') }} </span>
+        <span>Rarity: {{ rarity(data) }} </span>
         <span>Element: {{ data.element }}</span>
         <span>Weapon: {{ data.weapontype }}</span>
         <span>Region: {{ data.region }}</span>
@@ -37,7 +37,7 @@ const rarity = ({ rarity }) => {
   for (let i = 0; i < parseInt(rarity[0]); i++) {
     cantidad.push('⭐')
   }
-  return cantidad
+  return cantidad.toString().split(',').join('')
 }
 
 </script>
